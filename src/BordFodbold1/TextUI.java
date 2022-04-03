@@ -31,12 +31,12 @@ public class TextUI implements FileIO {
 
         while(true) {
             System.out.println("Bordfodboldturnering menu: ");
-            System.out.println("Tilmeld ny hold og tilføj til turnering (tast 1)"); //"Create new team and add it to league (press 1)"
-            System.out.println("Slet eksisterende hold fra turnering (tast 2)"); //"Delete existing team from league (press 2)"
-            System.out.println("Vis statistik for hold (tast 3)"); //"Display Statistics for team (press 3)"
-            System.out.println("Vis fodboldturneringstabel (tast 4)"); //"Display the Premier League Table (press 4)"
-            System.out.println("Tilføj en spillet kamp (tast 5)"); //"Add a Played Match (press 5)"
-            System.out.println("Vis kalender og find kamp (tast 6)"); //"Display Calendar and Find Match (press 6)"
+            System.out.println("Tilmeld ny hold og tilføj til turnering (tast 1)");
+            System.out.println("Slet eksisterende hold fra turnering (tast 2)");
+            System.out.println("Vis statistik for hold (tast 3)");
+            System.out.println("Vis fodboldturneringstabel (tast 4)");
+            System.out.println("Tilføj en spillet kamp (tast 5)");
+            System.out.println("Vis kalender og find kamp (tast 6)");
             String line = scanner.nextLine();
             int command = 0;
             try {
@@ -72,27 +72,27 @@ public class TextUI implements FileIO {
 
     private void addTeam(){
         if(league.size() == numberOfClubs) {
-            System.out.println("Kan ikke tilføje flere holder til ligaen"); //Can't add more clubs to league
+            System.out.println("Kan ikke tilføje flere holder til ligaen");
             return;
         }
 
         Team club = new Team();
-        System.out.println("Indsæt holdnavn: "); //"Insert Club Name: "
+        System.out.println("Indsæt holdnavn: ");
         String line = scanner.nextLine();
         club.setName(line);
 
         if(league.contains(club)){
-            System.out.println("Dette hold er allerede i ligaen"); //This club is already in the league
+            System.out.println("Dette hold er allerede i ligaen");
             return;
         }
-        System.out.println("Indsæt holdets lokation: "); //Insert Club Location
+        System.out.println("Indsæt holdets lokation: ");
         line = scanner.nextLine();
         club.setLocation(line);
         league.add(club);
     }
 
     private void deleteTeam() {
-        System.out.println("Indsæt holdnavn: "); //Insert club name
+        System.out.println("Indsæt holdnavn: ");
         String line = scanner.nextLine();
         for(Team club : league) {
             if(club.getName().equals(line)){
@@ -101,7 +101,7 @@ public class TextUI implements FileIO {
                 return;
             }
         }
-        System.out.println("Ingen hold med dette navn i ligaen"); //No such club in league
+        System.out.println("Ingen hold med dette navn i ligaen");
     }
 
     private void displayStatistics() {
